@@ -52,8 +52,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -61,9 +61,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News Section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create News Items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create news items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -98,8 +98,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/request.html">Request Class</a></li>
@@ -117,7 +117,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
@@ -314,9 +313,7 @@ for the information it needs to run correctly:</p>
 <h3><a class="toc-backref" href="#id2">Calling Commands</a><a class="headerlink" href="#calling-commands" title="Permalink to this headline"></a></h3>
 <p>Commands can also be ran from within your own code. This is most often done within a controller for cronjob tasks,
 but they can be used at any time. You do this by using the <code class="docutils literal notranslate"><span class="pre">command()</span></code> function. This function is always available.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">echo</span> <span class="nx">command</span><span class="p">(</span><span class="s1">&#39;migrate:create TestMigration&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nx">command</span><span class="p">(</span><span class="s1">&#39;migrate:create TestMigration&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>The only argument is string that is the command called and any parameters. This appears exactly as you would call
@@ -401,34 +398,20 @@ any CLI arguments after the command name for your use. If the CLI string was:</p
 </pre></div>
 </div>
 <p>Then <strong>foo</strong> is the command name, and the <code class="docutils literal notranslate"><span class="pre">$params</span></code> array would be:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;baz&#39;</span><span class="p">];</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$params</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="s1">&#39;baz&#39;</span><span class="p">];</span>
 </pre></div>
 </div>
 <p>This can also be accessed through the <a class="reference internal" href="cli_library.html"><span class="doc">CLI</span></a> library, but this already has your command removed
 from the string. These parameters can be used to customize how your scripts behave.</p>
 <p>Our demo command might have a <code class="docutils literal notranslate"><span class="pre">run</span></code> method something like:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">namespace</span> <span class="nx">App\Commands</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\CLI\BaseCommand</span><span class="p">;</span>
-<span class="k">use</span> <span class="nx">CodeIgniter\CLI\CLI</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">AppInfo</span> <span class="k">extends</span> <span class="nx">BaseCommand</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">run</span><span class="p">(</span><span class="k">array</span> <span class="nv">$params</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="c1">// ...</span>
-
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">run</span><span class="p">(</span><span class="k">array</span> <span class="nv">$params</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">&#39;PHP Version: &#39;</span> <span class="o">.</span> <span class="nx">CLI</span><span class="o">::</span><span class="na">color</span><span class="p">(</span><span class="k">PHP_VERSION</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">));</span>
-        <span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">&#39;CI Version: &#39;</span> <span class="o">.</span> <span class="nx">CLI</span><span class="o">::</span><span class="na">color</span><span class="p">(</span><span class="nx">\CodeIgniter\CodeIgniter</span><span class="o">::</span><span class="na">CI_VERSION</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">));</span>
-        <span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">&#39;APPPATH: &#39;</span> <span class="o">.</span> <span class="nx">CLI</span><span class="o">::</span><span class="na">color</span><span class="p">(</span><span class="nx">APPPATH</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">));</span>
-        <span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">&#39;SYSTEMPATH: &#39;</span> <span class="o">.</span> <span class="nx">CLI</span><span class="o">::</span><span class="na">color</span><span class="p">(</span><span class="nx">SYSTEMPATH</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">));</span>
-        <span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">&#39;ROOTPATH: &#39;</span> <span class="o">.</span> <span class="nx">CLI</span><span class="o">::</span><span class="na">color</span><span class="p">(</span><span class="nx">ROOTPATH</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">));</span>
-        <span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">&#39;Included files: &#39;</span> <span class="o">.</span> <span class="nx">CLI</span><span class="o">::</span><span class="na">color</span><span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nb">get_included_files</span><span class="p">()),</span> <span class="s1">&#39;yellow&#39;</span><span class="p">));</span>
-    <span class="p">}</span>
+    <span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">&#39;PHP Version: &#39;</span><span class="o">.</span> <span class="nx">CLI</span><span class="o">::</span><span class="na">color</span><span class="p">(</span><span class="nb">phpversion</span><span class="p">(),</span> <span class="s1">&#39;yellow&#39;</span><span class="p">));</span>
+    <span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">&#39;CI Version: &#39;</span><span class="o">.</span> <span class="nx">CLI</span><span class="o">::</span><span class="na">color</span><span class="p">(</span><span class="nx">\CodeIgniter\CodeIgniter</span><span class="o">::</span><span class="na">CI_VERSION</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">));</span>
+    <span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">&#39;APPPATH: &#39;</span><span class="o">.</span> <span class="nx">CLI</span><span class="o">::</span><span class="na">color</span><span class="p">(</span><span class="nx">APPPATH</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">));</span>
+    <span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">&#39;SYSTEMPATH: &#39;</span><span class="o">.</span> <span class="nx">CLI</span><span class="o">::</span><span class="na">color</span><span class="p">(</span><span class="nx">SYSTEMPATH</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">));</span>
+    <span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">&#39;ROOTPATH: &#39;</span><span class="o">.</span> <span class="nx">CLI</span><span class="o">::</span><span class="na">color</span><span class="p">(</span><span class="nx">ROOTPATH</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">));</span>
+    <span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">&#39;Included files: &#39;</span><span class="o">.</span> <span class="nx">CLI</span><span class="o">::</span><span class="na">color</span><span class="p">(</span><span class="nb">count</span><span class="p">(</span><span class="nb">get_included_files</span><span class="p">()),</span> <span class="s1">&#39;yellow&#39;</span><span class="p">));</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -459,9 +442,7 @@ be familiar with when creating your own commands. It also has a <a class="refere
 </tbody>
 </table>
 <p>This method allows you to run other commands during the execution of your current command:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">call</span><span class="p">(</span><span class="s1">&#39;command_one&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">call</span><span class="p">(</span><span class="s1">&#39;command_one&#39;</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">call</span><span class="p">(</span><span class="s1">&#39;command_two&#39;</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -482,10 +463,8 @@ be familiar with when creating your own commands. It also has a <a class="refere
 </tbody>
 </table>
 <p>A convenience method to maintain a consistent and clear error output to the CLI:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">try</span> <span class="p">{</span>
-    <span class="c1">// ...</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">try</span> <span class="p">{</span>
+    <span class="o">.</span> <span class="o">.</span> <span class="o">.</span>
 <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">showError</span><span class="p">(</span><span class="nv">$e</span><span class="p">);</span>
 <span class="p">}</span>
@@ -515,18 +494,15 @@ be familiar with when creating your own commands. It also has a <a class="refere
 </tbody>
 </table>
 <p>A method to calculate padding for $key =&gt; $value array output. The padding can be used to output a will formatted table in CLI:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$pad</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getPad</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">options</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$pad</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getPad</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">options</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
 
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">options</span> <span class="k">as</span> <span class="nv">$option</span> <span class="o">=&gt;</span> <span class="nv">$description</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="nv">$tab</span> <span class="o">.</span> <span class="nx">CLI</span><span class="o">::</span><span class="na">color</span><span class="p">(</span><span class="nb">str_pad</span><span class="p">(</span><span class="nv">$option</span><span class="p">,</span> <span class="nv">$pad</span><span class="p">),</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span> <span class="o">.</span> <span class="nv">$description</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="cm">/*</span>
-<span class="cm"> * Output will be:</span>
-<span class="cm"> * -n        Set migration namespace</span>
-<span class="cm"> * -r        override file</span>
-<span class="cm"> */</span>
+
+<span class="c1">// Output will be</span>
+<span class="o">-</span><span class="nx">n</span>                  <span class="nx">Set</span> <span class="nx">migration</span> <span class="k">namespace</span>
+<span class="o">-</span><span class="nx">r</span>                  <span class="nx">override</span> <span class="nb">file</span>
 </pre></div>
 </div>
 </dd></dl>

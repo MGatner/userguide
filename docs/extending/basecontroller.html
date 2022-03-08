@@ -52,8 +52,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -61,9 +61,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News Section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create News Items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create news items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -98,8 +98,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/request.html">Request Class</a></li>
@@ -117,7 +117,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
@@ -270,6 +269,8 @@ advantage of preloaded components and any additional functionality you provide:<
 
 <span class="k">namespace</span> <span class="nx">App\Controllers</span><span class="p">;</span>
 
+<span class="k">use</span> <span class="nx">CodeIgniter\Controller</span><span class="p">;</span>
+
 <span class="k">class</span> <span class="nc">Home</span> <span class="k">extends</span> <span class="nx">BaseController</span>
 <span class="p">{</span>
     <span class="c1">// ...</span>
@@ -281,48 +282,24 @@ advantage of preloaded components and any additional functionality you provide:<
 <p>The base controller is a great place to load any helpers, models, libraries, services, etc. that you intend to
 use every time your project runs. Helpers should be added to the pre-defined <code class="docutils literal notranslate"><span class="pre">$helpers</span></code> array. For example, if
 you want the HTML and Text helpers universally available:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">namespace</span> <span class="nx">App\Controllers</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\Controller</span><span class="p">;</span>
-
-<span class="k">abstract</span> <span class="k">class</span> <span class="nc">BaseController</span> <span class="k">extends</span> <span class="nx">Controller</span>
-<span class="p">{</span>
-    <span class="c1">// ...</span>
-
-    <span class="k">protected</span> <span class="nv">$helpers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;html&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">];</span>
-
-    <span class="c1">// ...</span>
-<span class="p">}</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">protected</span> <span class="nv">$helpers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;html&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">];</span>
 </pre></div>
 </div>
 <p>Any other components to load or data to process should be added to the constructor <code class="docutils literal notranslate"><span class="pre">initController()</span></code>. For
 example, if your project uses the Session Library heavily you may want to initiate it here:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">namespace</span> <span class="nx">App\Controllers</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\Controller</span><span class="p">;</span>
-
-<span class="k">abstract</span> <span class="k">class</span> <span class="nc">BaseController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">initController</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="c1">// ...</span>
+    <span class="c1">// Do Not Edit This Line</span>
+    <span class="k">parent</span><span class="o">::</span><span class="na">initController</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nv">$response</span><span class="p">,</span> <span class="nv">$logger</span><span class="p">);</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">initController</span><span class="p">(</span><span class="cm">/* ... */</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="c1">// Do Not Edit This Line</span>
-        <span class="k">parent</span><span class="o">::</span><span class="na">initController</span><span class="p">(</span><span class="nv">$request</span><span class="p">,</span> <span class="nv">$response</span><span class="p">,</span> <span class="nv">$logger</span><span class="p">);</span>
-
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span> <span class="o">=</span> <span class="nx">\Config\Services</span><span class="o">::</span><span class="na">session</span><span class="p">();</span>
-    <span class="p">}</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span> <span class="o">=</span> <span class="nx">\Config\Services</span><span class="o">::</span><span class="na">session</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="additional-methods">
 <h2>Additional Methods<a class="headerlink" href="#additional-methods" title="Permalink to this headline"></a></h2>
-<p>The base controller is not routable. As an added security
+<p>The base controller is not routable (system config routes it to 404 Page Not Found). As an added security
 measure <strong>all</strong> new methods you create should be declared as <code class="docutils literal notranslate"><span class="pre">protected</span></code> or <code class="docutils literal notranslate"><span class="pre">private</span></code> and only be accessed through the
 controllers you create that extend <code class="docutils literal notranslate"><span class="pre">BaseController</span></code>.</p>
 </div>
@@ -333,15 +310,9 @@ has an involved public interface and a simple administrative portal you may want
 the public controllers and make <code class="docutils literal notranslate"><span class="pre">AdminController</span></code> for any administrative controllers.</p>
 <p>If you do not want to use the base controller you may bypass it by having your controllers extend the system
 Controller instead:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">namespace</span> <span class="nx">App\Controllers</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\Controller</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">Home</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Home</span> <span class="k">extends</span> <span class="nx">\CodeIgniter\Controller</span>
 <span class="p">{</span>
-    <span class="c1">// ...</span>
+
 <span class="p">}</span>
 </pre></div>
 </div>

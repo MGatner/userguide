@@ -52,8 +52,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -61,9 +61,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News Section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create News Items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create news items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -98,8 +98,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/request.html">Request Class</a></li>
@@ -117,7 +117,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
@@ -307,9 +306,7 @@ These do not require loading any additional libraries or helpers.</p>
 is provided, will return the value of $key as stored in the cache currently,
 or null if no value is found.</p>
 <p>Examples:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$foo</span> <span class="o">=</span> <span class="nx">cache</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$foo</span> <span class="o">=</span> <span class="nx">cache</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span>
 <span class="nv">$cache</span> <span class="o">=</span> <span class="nx">cache</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -511,22 +508,18 @@ If $data is an array, then it loops over it, escaping each ‘value’ of the ke
 </table>
 <p>Provides a simple way to access “old input data” from submitting a form.</p>
 <p>Example:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="c1">// in controller, checking form submittal</span>
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$model</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$user</span><span class="p">))</span> <span class="p">{</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// in controller, checking form submittal</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$model</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$user</span><span class="p">))</span>
+<span class="p">{</span>
     <span class="c1">// &#39;withInput&#39; is what specifies &quot;old data&quot;</span>
     <span class="c1">// should be saved.</span>
     <span class="k">return</span> <span class="nx">redirect</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">back</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">withInput</span><span class="p">();</span>
 <span class="p">}</span>
 
-<span class="cp">?&gt;</span>
-
-<span class="c">&lt;!-- In your view file: --&gt;</span>
-<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">old</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="s">&quot;</span><span class="p">&gt;</span>
-
-<span class="c">&lt;!-- Or with arrays: --&gt;</span>
-<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;user[email]&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">&lt;?</span><span class="o">=</span> <span class="nx">old</span><span class="p">(</span><span class="s1">&#39;user.email&#39;</span><span class="p">)</span> <span class="cp">?&gt;</span><span class="s">&quot;</span><span class="p">&gt;</span>
+<span class="c1">// In the view</span>
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;email&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;email&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;&lt;?= old(&#39;email&#39;) ?&gt;&quot;</span><span class="o">&gt;</span>
+<span class="c1">// Or with arrays</span>
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;email&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;user[email]&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;&lt;?= old(&#39;user.email&#39;) ?&gt;&quot;</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -584,14 +577,12 @@ stored value. For more information, see the <a class="reference internal" href="
 of a benchmark point as the only parameter. This will start timing from this point, or stop
 timing if a timer with this name is already running.</p>
 <p>Example:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="c1">// Get an instance</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Get an instance</span>
 <span class="nv">$timer</span> <span class="o">=</span> <span class="nx">timer</span><span class="p">();</span>
 
 <span class="c1">// Set timer start and stop points</span>
 <span class="nx">timer</span><span class="p">(</span><span class="s1">&#39;controller_loading&#39;</span><span class="p">);</span>    <span class="c1">// Will start the timer</span>
-<span class="c1">// ...</span>
+<span class="o">.</span> <span class="o">.</span> <span class="o">.</span>
 <span class="nx">timer</span><span class="p">(</span><span class="s1">&#39;controller_loading&#39;</span><span class="p">);</span>    <span class="c1">// Will stop the running timer</span>
 </pre></div>
 </div>
@@ -632,9 +623,7 @@ libraries, and routed closures.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">$option</span></code> array is provided primarily to facilitate third-party integrations with
 libraries like Twig.</p>
 <p>Example:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;user&#39;</span> <span class="o">=&gt;</span> <span class="nv">$user</span><span class="p">];</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;user&#39;</span> <span class="o">=&gt;</span> <span class="nv">$user</span><span class="p">];</span>
 
 <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;user_profile&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 </pre></div>
@@ -685,40 +674,6 @@ libraries like Twig.</p>
 </tbody>
 </table>
 <p>Returns the timezone the application has been set to display dates in.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="csp_script_nonce">
-<code class="descname">csp_script_nonce</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#csp_script_nonce" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The CSP nonce attribute for script tag.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
-</tr>
-</tbody>
-</table>
-<p>Returns the nonce attribute for a script tag. For example: <code class="docutils literal notranslate"><span class="pre">nonce=&quot;Eskdikejidojdk978Ad8jf&quot;</span></code>.
-See <a class="reference internal" href="../outgoing/response.html#content-security-policy"><span class="std std-ref">Content Security Policy</span></a>.</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="csp_style_nonce">
-<code class="descname">csp_style_nonce</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#csp_style_nonce" title="Permalink to this definition"></a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The CSP nonce attribute for style tag.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
-</tr>
-</tbody>
-</table>
-<p>Returns the nonce attribute for a style tag. For example: <code class="docutils literal notranslate"><span class="pre">nonce=&quot;Eskdikejidojdk978Ad8jf&quot;</span></code>.
-See <a class="reference internal" href="../outgoing/response.html#content-security-policy"><span class="std std-ref">Content Security Policy</span></a>.</p>
 </dd></dl>
 
 <dl class="function">
@@ -932,9 +887,7 @@ modern browsers to automatically modify any HTTP requests to HTTPS requests for 
 </tbody>
 </table>
 <p>Returns a RedirectResponse instance allowing you to easily create redirects:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="c1">// Go back to the previous page</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Go back to the previous page</span>
 <span class="k">return</span> <span class="nx">redirect</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">back</span><span class="p">();</span>
 
 <span class="c1">// Go to specific URI</span>
@@ -958,9 +911,7 @@ modern browsers to automatically modify any HTTP requests to HTTPS requests for 
 </div>
 <p>When passing an argument into the function, it is treated as a named/reverse-routed route, not a relative/full URI,
 treating it the same as using <code class="docutils literal notranslate"><span class="pre">redirect()-&gt;route()</span></code>:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="c1">// Go to a named/reverse-routed URI</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Go to a named/reverse-routed URI</span>
 <span class="k">return</span> <span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;named_route&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -990,9 +941,7 @@ treating it the same as using <code class="docutils literal notranslate"><span c
 <p>This function prevents inserting null characters between ASCII
 characters, like Java\0script.</p>
 <p>Example:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nx">remove_invisible_characters</span><span class="p">(</span><span class="s1">&#39;Java\\0script&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">remove_invisible_characters</span><span class="p">(</span><span class="s1">&#39;Java\\0script&#39;</span><span class="p">);</span>
 <span class="c1">// Returns: &#39;Javascript&#39;</span>
 </pre></div>
 </div>
@@ -1043,9 +992,7 @@ or a controller::method combination. Will take parameters into effect, if provid
 This will always return a shared instance of the class, so no matter how many times this is called
 during a single request, only one class instance will be created.</p>
 <p>Example:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$logger</span> <span class="o">=</span> <span class="nx">service</span><span class="p">(</span><span class="s1">&#39;logger&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$logger</span> <span class="o">=</span> <span class="nx">service</span><span class="p">(</span><span class="s1">&#39;logger&#39;</span><span class="p">);</span>
 <span class="nv">$renderer</span> <span class="o">=</span> <span class="nx">service</span><span class="p">(</span><span class="s1">&#39;renderer&#39;</span><span class="p">,</span> <span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;views/&#39;</span><span class="p">);</span>
 </pre></div>
 </div>

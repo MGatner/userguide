@@ -52,8 +52,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -61,9 +61,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News Section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create News Items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create news items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -98,8 +98,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/request.html">Request Class</a></li>
@@ -117,7 +117,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
@@ -275,9 +274,7 @@ natively included in CodeIgniter, in a platform-independent manner. For
 example, let’s say you want to call the <code class="docutils literal notranslate"><span class="pre">mysql_get_client_info()</span></code>
 function, which is <strong>not</strong> natively supported by CodeIgniter. You could
 do so like this:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$db</span><span class="o">-&gt;</span><span class="na">callFunction</span><span class="p">(</span><span class="s1">&#39;get_client_info&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$db</span><span class="o">-&gt;</span><span class="na">callFunction</span><span class="p">(</span><span class="s1">&#39;get_client_info&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>You must supply the name of the function, <strong>without</strong> the mysql_
@@ -288,22 +285,16 @@ function calls are identical between platforms, so there are limits to
 how useful this function can be in terms of portability.</p>
 <p>Any parameters needed by the function you are calling will be added to
 the second parameter.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$db</span><span class="o">-&gt;</span><span class="na">callFunction</span><span class="p">(</span><span class="s1">&#39;some_function&#39;</span><span class="p">,</span> <span class="nv">$param1</span><span class="p">,</span> <span class="nv">$param2</span><span class="p">,</span> <span class="cm">/* ... */</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$db</span><span class="o">-&gt;</span><span class="na">callFunction</span><span class="p">(</span><span class="s1">&#39;some_function&#39;</span><span class="p">,</span> <span class="nv">$param1</span><span class="p">,</span> <span class="nv">$param2</span><span class="p">,</span> <span class="nx">etc</span><span class="o">..</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Often, you will either need to supply a database connection ID or a
 database result ID. The connection ID can be accessed using:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$db</span><span class="o">-&gt;</span><span class="na">connID</span><span class="p">;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$db</span><span class="o">-&gt;</span><span class="na">connID</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>The result ID can be accessed from within your result object, like this:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SOME QUERY&quot;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SOME QUERY&quot;</span><span class="p">);</span>
 
 <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">resultID</span><span class="p">;</span>
 </pre></div>

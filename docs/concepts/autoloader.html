@@ -52,8 +52,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -61,9 +61,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News Section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create News Items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create news items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -98,8 +98,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/request.html">Request Class</a></li>
@@ -117,7 +117,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
@@ -270,9 +269,10 @@ classes that your project is using. Keeping track of where every single file is,
 hard-coding that location into your files in a series of <code class="docutils literal notranslate"><span class="pre">requires()</span></code> is a massive
 headache and very error-prone. That’s where autoloaders come in.</p>
 <p>CodeIgniter provides a very flexible autoloader that can be used with very little configuration.
-It can locate individual namespaced classes that adhere to
+It can locate individual non-namespaced classes, namespaced classes that adhere to
 <a class="reference external" href="https://www.php-fig.org/psr/psr-4/">PSR-4</a> autoloading
-directory structures.</p>
+directory structures, and will even attempt to locate classes in common directories (like Controllers,
+Models, etc).</p>
 <p>For performance improvement, the core CodeIgniter components have been added to the classmap.</p>
 <p>The autoloader works great by itself, but can also work with other autoloaders, like
 <a class="reference external" href="https://getcomposer.org">Composer</a>, or even your own custom autoloaders, if needed.
@@ -292,9 +292,7 @@ arrays: one for the classmap, and one for PSR-4 compatible namespaces.</p>
 application’s files. This is most important for any business-logic related classes, entity classes,
 etc. The <code class="docutils literal notranslate"><span class="pre">psr4</span></code> array in the configuration file allows you to map the namespace to the directory
 those classes can be found in:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$psr4</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$psr4</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;App&#39;</span>         <span class="o">=&gt;</span> <span class="nx">APPPATH</span><span class="p">,</span>
     <span class="s1">&#39;CodeIgniter&#39;</span> <span class="o">=&gt;</span> <span class="nx">SYSTEMPATH</span><span class="p">,</span>
 <span class="p">];</span>
@@ -308,9 +306,7 @@ have a trailing slash.</p>
 libraries, or models in the application directory, if you do, they will be found under the <code class="docutils literal notranslate"><span class="pre">App</span></code> namespace.
 You may change this namespace by editing the <strong>/app/Config/Constants.php</strong> file and setting the
 new namespace value under the <code class="docutils literal notranslate"><span class="pre">APP_NAMESPACE</span></code> setting:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nb">define</span><span class="p">(</span><span class="s1">&#39;APP_NAMESPACE&#39;</span><span class="p">,</span> <span class="s1">&#39;App&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;APP_NAMESPACE&#39;</span><span class="p">,</span> <span class="s1">&#39;App&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>You will need to modify any existing files that are referencing the current namespace.</p>
@@ -326,9 +322,7 @@ namespace has changed.</p>
 <p>The classmap is used extensively by CodeIgniter to eke the last ounces of performance out of the system
 by not hitting the file-system with extra <code class="docutils literal notranslate"><span class="pre">is_file()</span></code> calls. You can use the classmap to link to
 third-party libraries that are not namespaced:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$classmap</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$classmap</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;Markdown&#39;</span> <span class="o">=&gt;</span> <span class="nx">APPPATH</span> <span class="o">.</span> <span class="s1">&#39;third_party/markdown.php&#39;</span>
 <span class="p">];</span>
 </pre></div>

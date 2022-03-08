@@ -52,8 +52,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -61,9 +61,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News Section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create News Items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create news items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -98,8 +98,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/request.html">Request Class</a></li>
@@ -117,7 +117,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
@@ -263,7 +262,7 @@
              
   <div class="section" id="server-requirements">
 <h1>Server Requirements<a class="headerlink" href="#server-requirements" title="Permalink to this headline"></a></h1>
-<p><a class="reference external" href="https://www.php.net/">PHP</a> version 7.4 or newer is required, with the
+<p><a class="reference external" href="https://www.php.net/">PHP</a> version 7.3 or newer is required, with the
 <a class="reference external" href="https://www.php.net/manual/en/intl.requirements.php">*intl* extension</a> and <a class="reference external" href="https://www.php.net/manual/en/mbstring.requirements.php">*mbstring* extension</a>
 installed.</p>
 <p>The following PHP extensions should be enabled on your server:
@@ -278,7 +277,6 @@ Currently supported databases are:</p>
 <li>PostgreSQL via the <em>Postgre</em> driver</li>
 <li>SQLite3 via the <em>SQLite3</em> driver</li>
 <li>MSSQL via the <em>SQLSRV</em> driver (version 2005 and above only)</li>
-<li>Oracle via the <em>OCI8</em> driver (version 12.1 and above only)</li>
 </ul>
 </div></blockquote>
 <p>Not all of the drivers have been converted/rewritten for CodeIgniter4.
@@ -286,7 +284,7 @@ The list below shows the outstanding ones.</p>
 <blockquote>
 <div><ul class="simple">
 <li>MySQL (5.1+) via the <em>pdo</em> driver</li>
-<li>Oracle via the <em>pdo</em> drivers</li>
+<li>Oracle via the <em>oci8</em> and <em>pdo</em> drivers</li>
 <li>PostgreSQL via the <em>pdo</em> driver</li>
 <li>MSSQL via the <em>pdo</em> driver</li>
 <li>SQLite via the <em>sqlite</em> (version 2) and <em>pdo</em> drivers</li>

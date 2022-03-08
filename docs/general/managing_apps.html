@@ -52,8 +52,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -61,9 +61,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News Section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create News Items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create news items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -98,8 +98,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/request.html">Request Class</a></li>
@@ -117,7 +117,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
@@ -280,34 +279,21 @@ rename or relocate your application directory.</p>
 it to a different location on your server, other than your project root, open
 your main <strong>app/Config/Paths.php</strong> and set a <em>full server path</em> in the
 <code class="docutils literal notranslate"><span class="pre">$appDirectory</span></code> variable (at about line 44):</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">namespace</span> <span class="nx">Config</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">Paths</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="nv">$appDirectory</span> <span class="o">=</span> <span class="s1">&#39;/path/to/your/app&#39;</span><span class="p">;</span>
-
-    <span class="c1">// ...</span>
-<span class="p">}</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$appDirectory</span> <span class="o">=</span> <span class="s1">&#39;/path/to/your/app&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>You will need to modify two additional files in your project root, so that
 they can find the <strong>Paths</strong> configuration file:</p>
 <ul>
 <li><p class="first"><strong>/spark</strong> runs command line apps; the path is specified on or about line 35:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$pathsConfig</span> <span class="o">=</span> <span class="s1">&#39;app/Config/Paths.php&#39;</span><span class="p">;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$pathsConfig</span> <span class="o">=</span> <span class="s1">&#39;app/Config/Paths.php&#39;</span><span class="p">;</span>
 <span class="c1">// ^^^ Change this line if you move your application folder</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first"><strong>/public/index.php</strong> is the front controller for your webapp; the config
 path is specified on or about line 20:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$pathsConfig</span> <span class="o">=</span> <span class="nx">FCPATH</span> <span class="o">.</span> <span class="s1">&#39;../app/Config/Paths.php&#39;</span><span class="p">;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$pathsConfig</span> <span class="o">=</span> <span class="nx">FCPATH</span> <span class="o">.</span> <span class="s1">&#39;../app/Config/Paths.php&#39;</span><span class="p">;</span>
 <span class="c1">// ^^^ Change this if you move your application folder</span>
 </pre></div>
 </div>
@@ -346,9 +332,7 @@ of those would be set to refer to the shared common <strong>system</strong> fold
 modify <strong>spark</strong> inside each application’s project folder, as directed above.</p>
 <p>When you use Composer autoloader, fix the <code class="docutils literal notranslate"><span class="pre">COMPOSER_PATH</span></code> constant in <strong>app/Config/Constants.php</strong> inside each
 of those:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;COMPOSER_PATH&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">define</span><span class="p">(</span><span class="s1">&#39;COMPOSER_PATH&#39;</span><span class="p">,</span> <span class="nx">ROOTPATH</span> <span class="o">.</span> <span class="s1">&#39;../vendor/autoload.php&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;COMPOSER_PATH&#39;</span><span class="p">)</span> <span class="o">||</span> <span class="nb">define</span><span class="p">(</span><span class="s1">&#39;COMPOSER_PATH&#39;</span><span class="p">,</span> <span class="nx">ROOTPATH</span> <span class="o">.</span> <span class="s1">&#39;../vendor/autoload.php&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>

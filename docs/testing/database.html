@@ -52,8 +52,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -61,9 +61,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News Section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create News Items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create news items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -98,8 +98,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/request.html">Request Class</a></li>
@@ -117,7 +117,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
@@ -306,14 +305,14 @@ of the functionality described here:</p>
 <span class="p">{</span>
     <span class="k">use</span> <span class="nx">DatabaseTestTrait</span><span class="p">;</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">setUp</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setUp</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="k">parent</span><span class="o">::</span><span class="na">setUp</span><span class="p">();</span>
 
         <span class="c1">// Do something here....</span>
     <span class="p">}</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">tearDown</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">tearDown</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="k">parent</span><span class="o">::</span><span class="na">tearDown</span><span class="p">();</span>
 
@@ -401,9 +400,7 @@ To run migrations from all available namespaces set this property to <code class
 must be present within the path specified in <code class="docutils literal notranslate"><span class="pre">$basePath</span></code>.</p>
 <p><strong>dontSeeInDatabase($table, $criteria)</strong></p>
 <p>Asserts that a row with criteria matching the key/value pairs in <code class="docutils literal notranslate"><span class="pre">$criteria</span></code> DOES NOT exist in the database.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$criteria</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$criteria</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;email&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;joe@example.com&#39;</span><span class="p">,</span>
     <span class="s1">&#39;active&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
 <span class="p">];</span>
@@ -412,9 +409,7 @@ must be present within the path specified in <code class="docutils literal notra
 </div>
 <p><strong>seeInDatabase($table, $criteria)</strong></p>
 <p>Asserts that a row with criteria matching the key/value pairs in <code class="docutils literal notranslate"><span class="pre">$criteria</span></code> DOES exist in the database.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$criteria</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$criteria</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;email&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;joe@example.com&#39;</span><span class="p">,</span>
     <span class="s1">&#39;active&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
 <span class="p">];</span>
@@ -424,17 +419,13 @@ must be present within the path specified in <code class="docutils literal notra
 <p><strong>grabFromDatabase($table, $column, $criteria)</strong></p>
 <p>Returns the value of <code class="docutils literal notranslate"><span class="pre">$column</span></code> from the specified table where the row matches <code class="docutils literal notranslate"><span class="pre">$criteria</span></code>. If more than one
 row is found, it will only test against the first one.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$username</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">grabFromDatabase</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;joe@example.com&#39;</span><span class="p">]);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$username</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">grabFromDatabase</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;joe@example.com&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
 <p><strong>hasInDatabase($table, $data)</strong></p>
 <p>Inserts a new row into the database. This row is removed after the current test runs. <code class="docutils literal notranslate"><span class="pre">$data</span></code> is an associative
 array with the data to insert into the table.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;joe@example.com&#39;</span><span class="p">,</span>
     <span class="s1">&#39;name&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;Joe Cool&#39;</span><span class="p">,</span>
 <span class="p">];</span>
@@ -443,9 +434,7 @@ array with the data to insert into the table.</p>
 </div>
 <p><strong>seeNumRecords($expected, $table, $criteria)</strong></p>
 <p>Asserts that a number of matching rows are found in the database that match <code class="docutils literal notranslate"><span class="pre">$criteria</span></code>.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$criteria</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$criteria</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;active&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
 <span class="p">];</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">seeNumRecords</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="nv">$criteria</span><span class="p">);</span>

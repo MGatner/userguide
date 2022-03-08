@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Static Pages &mdash; CodeIgniter 4.1.9 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
+  <title>Static pages &mdash; CodeIgniter 4.1.9 documentation</title><link rel="stylesheet" href="../_static/css/citheme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /><link rel="shortcut icon" href="../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -18,7 +18,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="News Section" href="news_section.html" />
+    <link rel="next" title="News section" href="news_section.html" />
     <link rel="prev" title="Build Your First Application" href="index.html" /> 
 </head>
 
@@ -52,8 +52,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -61,9 +61,9 @@
 </ul>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Build Your First Application</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Static Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="news_section.html">News Section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="create_news_items.html">Create News Items</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Static pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="news_section.html">News section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="create_news_items.html">Create news items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -98,8 +98,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/request.html">Request Class</a></li>
@@ -117,7 +117,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
@@ -252,7 +251,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">Build Your First Application</a> &raquo;</li>
-      <li>Static Pages</li>
+      <li>Static pages</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -262,7 +261,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="static-pages">
-<h1>Static Pages<a class="headerlink" href="#static-pages" title="Permalink to this headline"></a></h1>
+<h1>Static pages<a class="headerlink" href="#static-pages" title="Permalink to this headline"></a></h1>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">This tutorial assumes you’ve downloaded CodeIgniter and
@@ -286,7 +285,7 @@ you’ll see URL patterns that match:</p>
 <p>As URL schemes become more complex, this may change. But for now, this
 is all we will need to know.</p>
 <div class="section" id="let-s-make-our-first-controller">
-<h2>Let’s Make our First Controller<a class="headerlink" href="#let-s-make-our-first-controller" title="Permalink to this headline"></a></h2>
+<h2>Let’s make our first controller<a class="headerlink" href="#let-s-make-our-first-controller" title="Permalink to this headline"></a></h2>
 <p>Create a file at <strong>app/Controllers/Pages.php</strong> with the following
 code.</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
@@ -359,36 +358,29 @@ XSS attacks. You can read more about it <a class="reference internal" href="../g
 </div>
 </div>
 <div class="section" id="adding-logic-to-the-controller">
-<h2>Adding Logic to the Controller<a class="headerlink" href="#adding-logic-to-the-controller" title="Permalink to this headline"></a></h2>
+<h2>Adding logic to the controller<a class="headerlink" href="#adding-logic-to-the-controller" title="Permalink to this headline"></a></h2>
 <p>Earlier you set up a controller with a <code class="docutils literal notranslate"><span class="pre">view()</span></code> method. The method
 accepts one parameter, which is the name of the page to be loaded. The
 static page bodies will be located in the <strong>app/Views/pages/</strong>
 directory.</p>
 <p>In that directory, create two files named <strong>home.php</strong> and <strong>about.php</strong>.
-Within those files, type some text - anything you’d like - and save them.
+Within those files, type some text − anything you’d like − and save them.
 If you like to be particularly un-original, try “Hello World!”.</p>
 <p>In order to load those pages, you’ll have to check whether the requested
 page actually exists. This will be the body of the <code class="docutils literal notranslate"><span class="pre">view()</span></code> method
 in the <code class="docutils literal notranslate"><span class="pre">Pages</span></code> controller created above:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">namespace</span> <span class="nx">App\Controllers</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">Pages</span> <span class="k">extends</span> <span class="nx">BaseController</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$page</span> <span class="o">=</span> <span class="s1">&#39;home&#39;</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$page</span> <span class="o">=</span> <span class="s1">&#39;home&#39;</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nb">is_file</span><span class="p">(</span><span class="nx">APPPATH</span> <span class="o">.</span> <span class="s1">&#39;Views/pages/&#39;</span> <span class="o">.</span> <span class="nv">$page</span> <span class="o">.</span> <span class="s1">&#39;.php&#39;</span><span class="p">))</span> <span class="p">{</span>
-            <span class="c1">// Whoops, we don&#39;t have a page for that!</span>
-            <span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\Exceptions\PageNotFoundException</span><span class="p">(</span><span class="nv">$page</span><span class="p">);</span>
-        <span class="p">}</span>
-
-        <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">ucfirst</span><span class="p">(</span><span class="nv">$page</span><span class="p">);</span> <span class="c1">// Capitalize the first letter</span>
-
-        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;templates/header&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
-        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;pages/&#39;</span> <span class="o">.</span> <span class="nv">$page</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
-        <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;templates/footer&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nb">is_file</span><span class="p">(</span><span class="nx">APPPATH</span> <span class="o">.</span> <span class="s1">&#39;Views/pages/&#39;</span> <span class="o">.</span> <span class="nv">$page</span> <span class="o">.</span> <span class="s1">&#39;.php&#39;</span><span class="p">))</span> <span class="p">{</span>
+        <span class="c1">// Whoops, we don&#39;t have a page for that!</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\Exceptions\PageNotFoundException</span><span class="p">(</span><span class="nv">$page</span><span class="p">);</span>
     <span class="p">}</span>
+
+    <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">ucfirst</span><span class="p">(</span><span class="nv">$page</span><span class="p">);</span> <span class="c1">// Capitalize the first letter</span>
+
+    <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;templates/header&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+    <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;pages/&#39;</span> <span class="o">.</span> <span class="nv">$page</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+    <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;templates/footer&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -483,17 +475,13 @@ controller and method, and break free from the normal convention:</p>
 <strong>app/Config/Routes.php</strong> and look for the “Route Definitions”
 section of the configuration file.</p>
 <p>The only uncommented line there to start with should be:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;Home::index&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;Home::index&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>This directive says that any incoming request without any content
 specified should be handled by the <code class="docutils literal notranslate"><span class="pre">index()</span></code> method inside the <code class="docutils literal notranslate"><span class="pre">Home</span></code> controller.</p>
 <p>Add the following line, <strong>after</strong> the route directive for ‘/’.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;(:any)&#39;</span><span class="p">,</span> <span class="s1">&#39;Pages::view/$1&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;(:any)&#39;</span><span class="p">,</span> <span class="s1">&#39;Pages::view/$1&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>CodeIgniter reads its routing rules from top to bottom and routes the
@@ -525,7 +513,7 @@ This ensures that only routes you define can be accessed.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="Build Your First Application" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="news_section.html" class="btn btn-neutral float-right" title="News Section" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="news_section.html" class="btn btn-neutral float-right" title="News section" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

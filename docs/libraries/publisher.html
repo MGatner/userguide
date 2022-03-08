@@ -52,8 +52,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -61,9 +61,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News Section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create News Items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create news items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -98,8 +98,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/request.html">Request Class</a></li>
@@ -117,7 +117,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
@@ -290,9 +289,7 @@
 <h2><a class="toc-backref" href="#id1">Loading the Library</a><a class="headerlink" href="#loading-the-library" title="Permalink to this headline"></a></h2>
 <p>Because Publisher instances are specific to their source and destination this library is not available
 through <code class="docutils literal notranslate"><span class="pre">Services</span></code> but should be instantiated or extended directly. E.g.:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$publisher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\CodeIgniter\Publisher\Publisher</span><span class="p">();</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$publisher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\CodeIgniter\Publisher\Publisher</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -312,17 +309,13 @@ the class and leveraging its discovery with <code class="docutils literal notran
 <div class="section" id="on-demand">
 <h3><a class="toc-backref" href="#id3">On Demand</a><a class="headerlink" href="#on-demand" title="Permalink to this headline"></a></h3>
 <p>Access <code class="docutils literal notranslate"><span class="pre">Publisher</span></code> directly by instantiating a new instance of the class:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$publisher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\CodeIgniter\Publisher\Publisher</span><span class="p">();</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$publisher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\CodeIgniter\Publisher\Publisher</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>By default the source and destination will be set to <code class="docutils literal notranslate"><span class="pre">ROOTPATH</span></code> and <code class="docutils literal notranslate"><span class="pre">FCPATH</span></code> respectively, giving <code class="docutils literal notranslate"><span class="pre">Publisher</span></code>
 easy access to take any file from your project and make it web-accessible. Alternatively you may pass a new source
 or source and destination into the constructor:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\Publisher\Publisher</span><span class="p">;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CodeIgniter\Publisher\Publisher</span><span class="p">;</span>
 
 <span class="nv">$vendorPublisher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Publisher</span><span class="p">(</span><span class="nx">ROOTPATH</span> <span class="o">.</span> <span class="s1">&#39;vendor&#39;</span><span class="p">);</span>
 <span class="nv">$filterPublisher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Publisher</span><span class="p">(</span><span class="s1">&#39;/path/to/module/Filters&#39;</span><span class="p">,</span> <span class="nx">APPPATH</span> <span class="o">.</span> <span class="s1">&#39;Filters&#39;</span><span class="p">);</span>
@@ -343,9 +336,7 @@ or source and destination into the constructor:</p>
 </div>
 <p>Once all the files are staged use one of the output commands (<strong>copy()</strong> or <strong>merge()</strong>) to process the staged files
 to their destination(s):</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="c1">// Place all files into $destination</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Place all files into $destination</span>
 <span class="nv">$frameworkPublisher</span><span class="o">-&gt;</span><span class="na">copy</span><span class="p">();</span>
 
 <span class="c1">// Place all files into $destination, overwriting existing files</span>
@@ -361,16 +352,15 @@ to their destination(s):</p>
 <h3><a class="toc-backref" href="#id4">Automation and Discovery</a><a class="headerlink" href="#automation-and-discovery" title="Permalink to this headline"></a></h3>
 <p>You may have regular publication tasks embedded as part of your application deployment or upkeep. <code class="docutils literal notranslate"><span class="pre">Publisher</span></code> leverages
 the powerful <code class="docutils literal notranslate"><span class="pre">Autoloader</span></code> to locate any child classes primed for publication:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\CLI\CLI</span><span class="p">;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CodeIgniter\CLI\CLI</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CodeIgniter\Publisher\Publisher</span><span class="p">;</span>
 
 <span class="k">foreach</span> <span class="p">(</span><span class="nx">Publisher</span><span class="o">::</span><span class="na">discover</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$publisher</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$publisher</span><span class="o">-&gt;</span><span class="na">publish</span><span class="p">();</span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$result</span> <span class="o">===</span> <span class="k">false</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$result</span> <span class="o">===</span> <span class="k">false</span><span class="p">)</span>
+    <span class="p">{</span>
         <span class="nx">CLI</span><span class="o">::</span><span class="na">error</span><span class="p">(</span><span class="nb">get_class</span><span class="p">(</span><span class="nv">$publisher</span><span class="p">)</span> <span class="o">.</span> <span class="s1">&#39; failed to publish!&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -378,9 +368,7 @@ the powerful <code class="docutils literal notranslate"><span class="pre">Autolo
 </div>
 <p>By default <code class="docutils literal notranslate"><span class="pre">discover()</span></code> will search for the “Publishers” directory across all namespaces, but you may specify a
 different directory and it will return any child classes found:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$memePublishers</span> <span class="o">=</span> <span class="nx">Publisher</span><span class="o">::</span><span class="na">discover</span><span class="p">(</span><span class="s1">&#39;CatGIFs&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$memePublishers</span> <span class="o">=</span> <span class="nx">Publisher</span><span class="o">::</span><span class="na">discover</span><span class="p">(</span><span class="s1">&#39;CatGIFs&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Most of the time you will not need to handle your own discovery, just use the provided “publish” command:</p>
@@ -441,9 +429,7 @@ You can set up <a class="reference internal" href="../cli/cli_commands.html"><sp
 <p>Now running <code class="docutils literal notranslate"><span class="pre">spark</span> <span class="pre">publish:daily</span></code> will keep your homepage’s image up-to-date. What if the photo is
 coming from an external API? You can use <code class="docutils literal notranslate"><span class="pre">addUri()</span></code> in place of <code class="docutils literal notranslate"><span class="pre">addPath()</span></code> to download the remote
 resource and publish it out instead:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$publisher</span><span class="o">-&gt;</span><span class="na">addUri</span><span class="p">(</span><span class="s1">&#39;https://example.com/feeds/daily_photo.jpg&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">copy</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$publisher</span><span class="o">-&gt;</span><span class="na">addUri</span><span class="p">(</span><span class="s1">&#39;https://example.com/feeds/daily_photo.jpg&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">copy</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -640,9 +626,7 @@ from the current list will end up in the same destination directory. Using <code
 to overwrite when there is already an existing file. Returns success or failure, use <code class="docutils literal notranslate"><span class="pre">getPublished()</span></code>
 and <code class="docutils literal notranslate"><span class="pre">getErrors()</span></code> to troubleshoot failures.
 Be mindful of duplicate basename collisions, for example:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$publisher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Publisher</span><span class="p">(</span><span class="s1">&#39;/home/source&#39;</span><span class="p">,</span> <span class="s1">&#39;/home/destination&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$publisher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Publisher</span><span class="p">(</span><span class="s1">&#39;/home/source&#39;</span><span class="p">,</span> <span class="s1">&#39;/home/destination&#39;</span><span class="p">);</span>
 <span class="nv">$publisher</span><span class="o">-&gt;</span><span class="na">addPaths</span><span class="p">([</span>
     <span class="s1">&#39;pencil/lead.png&#39;</span><span class="p">,</span>
     <span class="s1">&#39;metal/lead.png&#39;</span><span class="p">,</span>
@@ -660,9 +644,7 @@ to overwrite when there is already an existing file; since directories are merge
 affect other files in the destination. Returns success or failure, use <code class="docutils literal notranslate"><span class="pre">getPublished()</span></code> and
 <code class="docutils literal notranslate"><span class="pre">getErrors()</span></code> to troubleshoot failures.</p>
 <p>Example:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$publisher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Publisher</span><span class="p">(</span><span class="s1">&#39;/home/source&#39;</span><span class="p">,</span> <span class="s1">&#39;/home/destination&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$publisher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Publisher</span><span class="p">(</span><span class="s1">&#39;/home/source&#39;</span><span class="p">,</span> <span class="s1">&#39;/home/destination&#39;</span><span class="p">);</span>
 <span class="nv">$publisher</span><span class="o">-&gt;</span><span class="na">addPaths</span><span class="p">([</span>
     <span class="s1">&#39;pencil/lead.png&#39;</span><span class="p">,</span>
     <span class="s1">&#39;metal/lead.png&#39;</span><span class="p">,</span>

@@ -52,8 +52,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -61,9 +61,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News Section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create News Items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create news items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -98,8 +98,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/request.html">Request Class</a></li>
@@ -117,7 +117,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
@@ -371,57 +370,33 @@ have the correct namespace relative to <code class="docutils literal notranslate
 to help with staging and clean up:</p>
 <div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">setUpBeforeClass</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
 <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">tearDownAfterClass</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
-
-<span class="k">protected</span> <span class="k">function</span> <span class="nf">setUp</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
-<span class="k">protected</span> <span class="k">function</span> <span class="nf">tearDown</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">setUp</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">tearDown</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
 </pre></div>
 </div>
 <p>The static methods run before and after the entire test case, whereas the local methods run
 between each test. If you implement any of these special functions make sure you run their
 parent as well so extended test cases do not interfere with staging:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">namespace</span> <span class="nx">App\Models</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\Test\CIUnitTestCase</span><span class="p">;</span>
-
-<span class="k">final</span> <span class="k">class</span> <span class="nc">OneOfMyModelsTest</span> <span class="k">extends</span> <span class="nx">CIUnitTestCase</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">setUp</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
 <span class="p">{</span>
-    <span class="k">protected</span> <span class="k">function</span> <span class="nf">setUp</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
-    <span class="p">{</span>
-        <span class="k">parent</span><span class="o">::</span><span class="na">setUp</span><span class="p">();</span>
-        <span class="nx">helper</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">);</span>
-    <span class="p">}</span>
+    <span class="k">parent</span><span class="o">::</span><span class="na">setUp</span><span class="p">();</span>
+    <span class="nx">helper</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>In addition to these methods, <code class="docutils literal notranslate"><span class="pre">CIUnitTestCase</span></code> also comes with a convenience property for
 parameter-free methods you want run during set up and tear down:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">protected</span> <span class="nv">$setUpMethods</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;mockEmail&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;mockSession&#39;</span><span class="p">,</span>
+<span class="p">];</span>
 
-<span class="k">namespace</span> <span class="nx">App\Models</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\Test\CIUnitTestCase</span><span class="p">;</span>
-
-<span class="k">final</span> <span class="k">class</span> <span class="nc">OneOfMyModelsTest</span> <span class="k">extends</span> <span class="nx">CIUnitTestCase</span>
-<span class="p">{</span>
-    <span class="k">protected</span> <span class="nv">$setUpMethods</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">&#39;mockEmail&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;mockSession&#39;</span><span class="p">,</span>
-    <span class="p">];</span>
-    <span class="k">protected</span> <span class="nv">$tearDownMethods</span> <span class="o">=</span> <span class="p">[];</span>
-<span class="p">}</span>
+<span class="k">protected</span> <span class="nv">$tearDownMethods</span> <span class="o">=</span> <span class="p">[];</span>
 </pre></div>
 </div>
 <p>You can see by default these handle the mocking of intrusive services, but your class may override
 that or provide their own:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">namespace</span> <span class="nx">App\Models</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\Test\CIUnitTestCase</span><span class="p">;</span>
-
-<span class="k">final</span> <span class="k">class</span> <span class="nc">OneOfMyModelsTest</span> <span class="k">extends</span> <span class="nx">CIUnitTestCase</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">OneOfMyModelsTest</span> <span class="k">extends</span> <span class="nx">CIUnitTestCase</span>
 <span class="p">{</span>
     <span class="k">protected</span> <span class="nv">$tearDownMethods</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;purgeRows&#39;</span><span class="p">,</span>
@@ -429,9 +404,8 @@ that or provide their own:</p>
 
     <span class="k">protected</span> <span class="k">function</span> <span class="nf">purgeRows</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">model</span><span class="o">-&gt;</span><span class="na">purgeDeleted</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">model</span><span class="o">-&gt;</span><span class="na">purgeDeleted</span><span class="p">()</span>
     <span class="p">}</span>
-<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -442,27 +416,19 @@ test cases. <code class="docutils literal notranslate"><span class="pre">CIUnitT
 to run named for the trait itself. For example, if you needed to add authentication to some
 of your test cases you could create an authentication trait with a set up method to fake a
 logged in user:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">trait</span> <span class="nx">AuthTrait</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">trait</span> <span class="nx">AuthTrait</span>
 <span class="p">{</span>
-    <span class="k">protected</span> <span class="k">function</span> <span class="nf">setUpAuthTrait</span><span class="p">()</span>
+    <span class="k">protected</span> <span class="nx">setUpAuthTrait</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="nv">$user</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createFakeUser</span><span class="p">();</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logInUser</span><span class="p">(</span><span class="nv">$user</span><span class="p">);</span>
     <span class="p">}</span>
+<span class="o">...</span>
 
-    <span class="c1">// ...</span>
-<span class="p">}</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\Test\CIUnitTestCase</span><span class="p">;</span>
-
-<span class="k">final</span> <span class="k">class</span> <span class="nc">AuthenticationFeatureTest</span> <span class="k">extends</span> <span class="nx">CIUnitTestCase</span>
+<span class="k">class</span> <span class="nc">AuthenticationFeatureTest</span>
 <span class="p">{</span>
     <span class="k">use</span> <span class="nx">AuthTrait</span><span class="p">;</span>
-
-    <span class="c1">// ...</span>
-<span class="p">}</span>
+<span class="o">...</span>
 </pre></div>
 </div>
 </div>
@@ -471,12 +437,10 @@ logged in user:</p>
 <p><code class="docutils literal notranslate"><span class="pre">CIUnitTestCase</span></code> provides additional unit testing assertions that you might find useful.</p>
 <p><strong>assertLogged($level, $expectedMessage)</strong></p>
 <p>Ensure that something you expected to be logged actually was:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$config</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">LoggerConfig</span><span class="p">();</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$config</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">LoggerConfig</span><span class="p">();</span>
 <span class="nv">$logger</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Logger</span><span class="p">(</span><span class="nv">$config</span><span class="p">);</span>
 
-<span class="c1">// ... do something that you expect a log entry from</span>
+<span class="o">...</span> <span class="k">do</span> <span class="nx">something</span> <span class="nx">that</span> <span class="nx">you</span> <span class="nx">expect</span> <span class="nx">a</span> <span class="nb">log</span> <span class="nx">entry</span> <span class="nx">from</span>
 <span class="nv">$logger</span><span class="o">-&gt;</span><span class="na">log</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s2">&quot;That&#39;s no moon&quot;</span><span class="p">);</span>
 
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertLogged</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s2">&quot;That&#39;s no moon&quot;</span><span class="p">);</span>
@@ -484,9 +448,7 @@ logged in user:</p>
 </div>
 <p><strong>assertEventTriggered($eventName)</strong></p>
 <p>Ensure that an event you expected to be triggered actually was:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nx">Events</span><span class="o">::</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$arg</span><span class="p">)</span> <span class="k">use</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$result</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">Events</span><span class="o">::</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$arg</span><span class="p">)</span> <span class="k">use</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$result</span><span class="p">)</span> <span class="p">{</span>
     <span class="nv">$result</span> <span class="o">=</span> <span class="nv">$arg</span><span class="p">;</span>
 <span class="p">});</span>
 
@@ -497,9 +459,7 @@ logged in user:</p>
 </div>
 <p><strong>assertHeaderEmitted($header, $ignoreCase = false)</strong></p>
 <p>Ensure that a header or cookie was actually emitted:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setCookie</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setCookie</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">);</span>
 
 <span class="nb">ob_start</span><span class="p">();</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">response</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
@@ -512,9 +472,7 @@ logged in user:</p>
 in PHPunit</a>.</p>
 <p><strong>assertHeaderNotEmitted($header, $ignoreCase = false)</strong></p>
 <p>Ensure that a header or cookie was not emitted:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setCookie</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setCookie</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">);</span>
 
 <span class="nb">ob_start</span><span class="p">();</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">response</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
@@ -527,10 +485,8 @@ in PHPunit</a>.</p>
 in PHPunit</a>.</p>
 <p><strong>assertCloseEnough($expected, $actual, $message = ‘’, $tolerance = 1)</strong></p>
 <p>For extended execution time testing, tests that the absolute difference
-between expected and actual time is within the prescribed tolerance:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$timer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Timer</span><span class="p">();</span>
+between expected and actual time is within the prescribed tolerance.:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$timer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Timer</span><span class="p">();</span>
 <span class="nv">$timer</span><span class="o">-&gt;</span><span class="na">start</span><span class="p">(</span><span class="s1">&#39;longjohn&#39;</span><span class="p">,</span> <span class="nb">strtotime</span><span class="p">(</span><span class="s1">&#39;-11 minutes&#39;</span><span class="p">));</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertCloseEnough</span><span class="p">(</span><span class="mi">11</span> <span class="o">*</span> <span class="mi">60</span><span class="p">,</span> <span class="nv">$timer</span><span class="o">-&gt;</span><span class="na">getElapsedTime</span><span class="p">(</span><span class="s1">&#39;longjohn&#39;</span><span class="p">));</span>
 </pre></div>
@@ -538,10 +494,8 @@ between expected and actual time is within the prescribed tolerance:</p>
 <p>The above test will allow the actual time to be either 660 or 661 seconds.</p>
 <p><strong>assertCloseEnoughString($expected, $actual, $message = ‘’, $tolerance = 1)</strong></p>
 <p>For extended execution time testing, tests that the absolute difference
-between expected and actual time, formatted as strings, is within the prescribed tolerance:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$timer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Timer</span><span class="p">();</span>
+between expected and actual time, formatted as strings, is within the prescribed tolerance.:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$timer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Timer</span><span class="p">();</span>
 <span class="nv">$timer</span><span class="o">-&gt;</span><span class="na">start</span><span class="p">(</span><span class="s1">&#39;longjohn&#39;</span><span class="p">,</span> <span class="nb">strtotime</span><span class="p">(</span><span class="s1">&#39;-11 minutes&#39;</span><span class="p">));</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertCloseEnoughString</span><span class="p">(</span><span class="mi">11</span> <span class="o">*</span> <span class="mi">60</span><span class="p">,</span> <span class="nv">$timer</span><span class="o">-&gt;</span><span class="na">getElapsedTime</span><span class="p">(</span><span class="s1">&#39;longjohn&#39;</span><span class="p">));</span>
 </pre></div>
@@ -555,9 +509,7 @@ properties in the classes that you are testing.</p>
 <p><strong>getPrivateMethodInvoker($instance, $method)</strong></p>
 <p>Enables you to call private methods from outside the class. This returns a function that can be called. The first
 parameter is an instance of the class to test. The second parameter is the name of the method you want to call.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="c1">// Create an instance of the class to test</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create an instance of the class to test</span>
 <span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">();</span>
 
 <span class="c1">// Get the invoker for the &#39;privateMethod&#39; method.</span>
@@ -570,9 +522,7 @@ parameter is an instance of the class to test. The second parameter is the name 
 <p><strong>getPrivateProperty($instance, $property)</strong></p>
 <p>Retrieves the value of a private/protected class property from an instance of a class. The first parameter is an
 instance of the class to test. The second parameter is the name of the property.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="c1">// Create an instance of the class to test</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create an instance of the class to test</span>
 <span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">();</span>
 
 <span class="c1">// Test the value</span>
@@ -582,9 +532,7 @@ instance of the class to test. The second parameter is the name of the property.
 <p><strong>setPrivateProperty($instance, $property, $value)</strong></p>
 <p>Set a protected value within a class instance. The first parameter is an instance of the class to test. The second
 parameter is the name of the property to set the value of. The third parameter is the value to set it to:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="c1">// Create an instance of the class to test</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create an instance of the class to test</span>
 <span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">();</span>
 
 <span class="c1">// Set the value</span>
@@ -604,21 +552,14 @@ to simplify this.</p>
 <p><strong>injectMock()</strong></p>
 <p>This method allows you to define the exact instance that will be returned by the Services class. You can use this to
 set properties of a service so that it behaves in a certain way, or replace a service with a mocked class.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\Test\CIUnitTestCase</span><span class="p">;</span>
-
-<span class="k">final</span> <span class="k">class</span> <span class="nc">SomeTest</span> <span class="k">extends</span> <span class="nx">CIUnitTestCase</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">testSomething</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">testSomething</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="nv">$curlrequest</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getMockBuilder</span><span class="p">(</span><span class="s1">&#39;CodeIgniter\HTTP\CURLRequest&#39;</span><span class="p">)</span>
-            <span class="o">-&gt;</span><span class="na">setMethods</span><span class="p">([</span><span class="s1">&#39;request&#39;</span><span class="p">])</span>
-            <span class="o">-&gt;</span><span class="na">getMock</span><span class="p">();</span>
-        <span class="nx">Services</span><span class="o">::</span><span class="na">injectMock</span><span class="p">(</span><span class="s1">&#39;curlrequest&#39;</span><span class="p">,</span> <span class="nv">$curlrequest</span><span class="p">);</span>
+    <span class="nv">$curlrequest</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getMockBuilder</span><span class="p">(</span><span class="s1">&#39;CodeIgniter\HTTP\CURLRequest&#39;</span><span class="p">)</span>
+                        <span class="o">-&gt;</span><span class="na">setMethods</span><span class="p">([</span><span class="s1">&#39;request&#39;</span><span class="p">])</span>
+                        <span class="o">-&gt;</span><span class="na">getMock</span><span class="p">();</span>
+    <span class="nx">Services</span><span class="o">::</span><span class="na">injectMock</span><span class="p">(</span><span class="s1">&#39;curlrequest&#39;</span><span class="p">,</span> <span class="nv">$curlrequest</span><span class="p">);</span>
 
-        <span class="c1">// Do normal testing here....</span>
-    <span class="p">}</span>
+    <span class="c1">// Do normal testing here....</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -639,19 +580,12 @@ class exactly. The second parameter is the instance to replace it with.</p>
 during testing that will be used with <code class="docutils literal notranslate"><span class="pre">Factories</span></code>. Use the same <code class="docutils literal notranslate"><span class="pre">injectMock()</span></code> and <code class="docutils literal notranslate"><span class="pre">reset()</span></code>
 static methods like <strong>Services</strong>, but they take an additional preceding parameter for the
 component name:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\Test\CIUnitTestCase</span><span class="p">;</span>
-
-<span class="k">final</span> <span class="k">class</span> <span class="nc">SomeTest</span> <span class="k">extends</span> <span class="nx">CIUnitTestCase</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">protected</span> <span class="k">function</span> <span class="nf">setUp</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="k">protected</span> <span class="k">function</span> <span class="nf">setUp</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
-    <span class="p">{</span>
-        <span class="k">parent</span><span class="o">::</span><span class="na">setUp</span><span class="p">();</span>
+    <span class="k">parent</span><span class="o">::</span><span class="na">setUp</span><span class="p">();</span>
 
-        <span class="nv">$model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MockUserModel</span><span class="p">();</span>
-        <span class="nx">Factories</span><span class="o">::</span><span class="na">injectMock</span><span class="p">(</span><span class="s1">&#39;models&#39;</span><span class="p">,</span> <span class="s1">&#39;App\Models\UserModel&#39;</span><span class="p">,</span> <span class="nv">$model</span><span class="p">);</span>
-    <span class="p">}</span>
+    <span class="nv">$model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MockUserModel</span><span class="p">();</span>
+    <span class="nx">Factories</span><span class="o">::</span><span class="na">injectMock</span><span class="p">(</span><span class="s1">&#39;models&#39;</span><span class="p">,</span> <span class="s1">&#39;App\Models\UserModel&#39;</span><span class="p">,</span> <span class="nv">$model</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -666,29 +600,22 @@ component name:</p>
 <p>You may need to test things that are difficult to test. Sometimes, capturing a stream, like PHP’s own STDOUT, or STDERR,
 might be helpful. The <code class="docutils literal notranslate"><span class="pre">CITestStreamFilter</span></code> helps you capture the output from the stream of your choice.</p>
 <p>An example demonstrating this inside one of your test cases:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\Test\CIUnitTestCase</span><span class="p">;</span>
-
-<span class="k">final</span> <span class="k">class</span> <span class="nc">SomeTest</span> <span class="k">extends</span> <span class="nx">CIUnitTestCase</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">setUp</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="k">protected</span> <span class="k">function</span> <span class="nf">setUp</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
-    <span class="p">{</span>
-        <span class="nx">CITestStreamFilter</span><span class="o">::</span><span class="nv">$buffer</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">stream_filter</span>        <span class="o">=</span> <span class="nb">stream_filter_append</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span> <span class="s1">&#39;CITestStreamFilter&#39;</span><span class="p">);</span>
-    <span class="p">}</span>
+    <span class="nx">CITestStreamFilter</span><span class="o">::</span><span class="nv">$buffer</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">stream_filter</span> <span class="o">=</span> <span class="nb">stream_filter_append</span><span class="p">(</span><span class="nx">STDOUT</span><span class="p">,</span> <span class="s1">&#39;CITestStreamFilter&#39;</span><span class="p">);</span>
+<span class="p">}</span>
 
-    <span class="k">protected</span> <span class="k">function</span> <span class="nf">tearDown</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
-    <span class="p">{</span>
-        <span class="nb">stream_filter_remove</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">stream_filter</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">tearDown</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nb">stream_filter_remove</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">stream_filter</span><span class="p">);</span>
+<span class="p">}</span>
 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">testSomeOutput</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
-    <span class="p">{</span>
-        <span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">&#39;first.&#39;</span><span class="p">);</span>
-        <span class="nv">$expected</span> <span class="o">=</span> <span class="s2">&quot;first.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span><span class="nv">$expected</span><span class="p">,</span> <span class="nx">CITestStreamFilter</span><span class="o">::</span><span class="nv">$buffer</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">testSomeOutput</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nx">CLI</span><span class="o">::</span><span class="na">write</span><span class="p">(</span><span class="s1">&#39;first.&#39;</span><span class="p">);</span>
+    <span class="nv">$expected</span> <span class="o">=</span> <span class="s2">&quot;first.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertSame</span><span class="p">(</span><span class="nv">$expected</span><span class="p">,</span> <span class="nx">CITestStreamFilter</span><span class="o">::</span><span class="nv">$buffer</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>

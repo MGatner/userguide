@@ -52,8 +52,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -61,9 +61,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News Section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create News Items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create news items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -98,8 +98,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/request.html">Request Class</a></li>
@@ -117,7 +117,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/view_parser.html">View Parser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../outgoing/view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../outgoing/api_responses.html">API Response Trait</a></li>
@@ -274,9 +273,7 @@ any of the existing functionality that PHP provides - unless it is to vastly sim
 <div class="section" id="loading-this-helper">
 <h2><a class="toc-backref" href="#id1">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="Permalink to this headline"></a></h2>
 <p>This helper is loaded using the following code:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nx">helper</span><span class="p">(</span><span class="s1">&#39;array&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">helper</span><span class="p">(</span><span class="s1">&#39;array&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -306,9 +303,7 @@ any of the existing functionality that PHP provides - unless it is to vastly sim
 </table>
 <p>This method allows you to use dot-notation to search through an array for a specific-key,
 and allows the use of a the ‘*’ wildcard. Given the following array:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;foo&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;buzz&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
             <span class="s1">&#39;fizz&#39;</span> <span class="o">=&gt;</span> <span class="mi">11</span><span class="p">,</span>
@@ -317,14 +312,12 @@ and allows the use of a the ‘*’ wildcard. Given the following array:</p>
             <span class="s1">&#39;baz&#39;</span> <span class="o">=&gt;</span> <span class="mi">23</span><span class="p">,</span>
         <span class="p">]</span>
     <span class="p">]</span>
-<span class="p">];</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 <p>We can locate the value of ‘fizz’ by using the search string “foo.buzz.fizz”. Likewise, the value
 of baz can be found with “foo.bar.baz”:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="c1">// Returns: 11</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Returns: 11</span>
 <span class="nv">$fizz</span> <span class="o">=</span> <span class="nx">dot_array_search</span><span class="p">(</span><span class="s1">&#39;foo.buzz.fizz&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 
 <span class="c1">// Returns: 23</span>
@@ -334,16 +327,12 @@ of baz can be found with “foo.bar.baz”:</p>
 <p>You can use the asterisk as a wildcard to replace any of the segments. When found, it will search through all
 of the child nodes until it finds it. This is handy if you don’t know the values, or if your values
 have a numeric index:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="c1">// Returns: 23</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// Returns: 23</span>
 <span class="nv">$baz</span> <span class="o">=</span> <span class="nx">dot_array_search</span><span class="p">(</span><span class="s1">&#39;foo.*.baz&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>If the array key contains a dot, then the key can be escaped with a backslash:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;foo&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;bar.baz&#39;</span> <span class="o">=&gt;</span> <span class="mi">23</span><span class="p">,</span>
     <span class="p">],</span>
@@ -409,9 +398,7 @@ sort flags as an associative array.</li>
 <p>This method sorts the elements of a multidimensional array by the values of one or
 more keys in a hierarchical way. Take the following array, that might be returned
 from, e.g., the <code class="docutils literal notranslate"><span class="pre">find()</span></code> function of a model:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$players</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$players</span> <span class="o">=</span> <span class="p">[</span>
     <span class="mi">0</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;name&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span>
         <span class="s1">&#39;team_id&#39;</span>  <span class="o">=&gt;</span> <span class="mi">2</span><span class="p">,</span>
@@ -444,9 +431,7 @@ from, e.g., the <code class="docutils literal notranslate"><span class="pre">fin
 </div>
 <p>Now sort this array by two keys. Note that the method supports the dot-notation
 to access values in deeper array levels, but does not support wildcards:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nx">array_sort_by_multiple_keys</span><span class="p">(</span><span class="nv">$players</span><span class="p">,</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nx">array_sort_by_multiple_keys</span><span class="p">(</span><span class="nv">$players</span><span class="p">,</span> <span class="p">[</span>
     <span class="s1">&#39;team.order&#39;</span> <span class="o">=&gt;</span> <span class="nx">SORT_ASC</span><span class="p">,</span>
     <span class="s1">&#39;position&#39;</span>   <span class="o">=&gt;</span> <span class="nx">SORT_ASC</span><span class="p">,</span>
 <span class="p">]);</span>
@@ -455,9 +440,7 @@ to access values in deeper array levels, but does not support wildcards:</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">$players</span></code> array is now sorted by the ‘order’ value in each players’
 ‘team’ subarray. If this value is equal for several players, these players
 will be ordered by their ‘position’. The resulting array is:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$players</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$players</span> <span class="o">=</span> <span class="p">[</span>
     <span class="mi">0</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;name&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;Frank&#39;</span><span class="p">,</span>
         <span class="s1">&#39;team_id&#39;</span>  <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span>
@@ -517,9 +500,7 @@ each nesting level and handle it accordingly.</p>
 </table>
 <p>This function flattens a multidimensional array to a single key-value array by using dots
 as separators for the keys.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$arrayToFlatten</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$arrayToFlatten</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;personal&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="s1">&#39;first_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;john&#39;</span><span class="p">,</span>
         <span class="s1">&#39;last_name&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;smith&#39;</span><span class="p">,</span>
@@ -533,9 +514,7 @@ as separators for the keys.</p>
 </pre></div>
 </div>
 <p>On inspection, <code class="docutils literal notranslate"><span class="pre">$flattened</span></code> is equal to:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
     <span class="s1">&#39;personal.first_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;john&#39;</span><span class="p">,</span>
     <span class="s1">&#39;personal.last_name&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;smith&#39;</span><span class="p">,</span>
     <span class="s1">&#39;personal.age&#39;</span>        <span class="o">=&gt;</span> <span class="s1">&#39;26&#39;</span><span class="p">,</span>
@@ -547,20 +526,17 @@ as separators for the keys.</p>
 <p>Users may use the <code class="docutils literal notranslate"><span class="pre">$id</span></code> parameter on their own, but are not required to do so.
 The function uses this parameter internally to track the flattened keys. If users
 will be supplying an initial <code class="docutils literal notranslate"><span class="pre">$id</span></code>, it will be prepended to all keys.</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="c1">// using the same data from above</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="c1">// using the same data from above</span>
 <span class="nv">$flattened</span> <span class="o">=</span> <span class="nx">array_flatten_with_dots</span><span class="p">(</span><span class="nv">$arrayToFlatten</span><span class="p">,</span> <span class="s1">&#39;foo_&#39;</span><span class="p">);</span>
-<span class="cm">/*</span>
-<span class="cm"> * $flattened is now:</span>
-<span class="cm"> * [</span>
-<span class="cm"> *     &#39;foo_personal.first_name&#39; =&gt; &#39;john&#39;,</span>
-<span class="cm"> *     &#39;foo_personal.last_name&#39;  =&gt; &#39;smith&#39;,</span>
-<span class="cm"> *     &#39;foo_personal.age&#39;        =&gt; &#39;26&#39;,</span>
-<span class="cm"> *     &#39;foo_personal.address&#39;    =&gt; &#39;US&#39;,</span>
-<span class="cm"> *     &#39;foo_other_details&#39;       =&gt; &#39;marines officer&#39;,</span>
-<span class="cm"> * ]</span>
-<span class="cm"> */</span>
+
+<span class="c1">// $flattened is now:</span>
+<span class="p">[</span>
+    <span class="s1">&#39;foo_personal.first_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;john&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;foo_personal.last_name&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;smith&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;foo_personal.age&#39;</span>        <span class="o">=&gt;</span> <span class="s1">&#39;26&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;foo_personal.address&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;US&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;foo_other_details&#39;</span>       <span class="o">=&gt;</span> <span class="s1">&#39;marines officer&#39;</span><span class="p">,</span>
+<span class="p">];</span>
 </pre></div>
 </div>
 </dd></dl>

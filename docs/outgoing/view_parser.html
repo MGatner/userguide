@@ -18,7 +18,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="View Decorators" href="view_decorators.html" />
+    <link rel="next" title="HTML Table Class" href="table.html" />
     <link rel="prev" title="View Layouts" href="view_layouts.html" /> 
 </head>
 
@@ -52,8 +52,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_composer.html">Composer Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/installing_manual.html">Manual Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/running.html">Running Your App</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/upgrading.html">Upgrading From a Previous Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../changelogs/index.html">Change Logs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/troubleshooting.html">Troubleshooting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../installation/repositories.html">CodeIgniter Repositories</a></li>
 </ul>
@@ -61,9 +61,9 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Build Your First Application</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News Section</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create News Items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/static_pages.html">Static pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/news_section.html">News section</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorial/create_news_items.html">Create news items</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial/conclusion.html">Conclusion</a></li>
 </ul>
 </li>
@@ -98,8 +98,8 @@
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../incoming/index.html">Controllers and Routing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../incoming/routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/filters.html">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/message.html">HTTP Messages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../incoming/request.html">Request Class</a></li>
@@ -117,7 +117,6 @@
 <li class="toctree-l2"><a class="reference internal" href="view_renderer.html">View Renderer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="view_layouts.html">View Layouts</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">View Parser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="view_decorators.html">View Decorators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="table.html">HTML Table Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_responses.html">API Response Trait</a></li>
@@ -326,16 +325,12 @@ confusion working with PHP.</p>
 <div class="section" id="using-the-view-parser-class">
 <h2><a class="toc-backref" href="#id1">Using the View Parser Class</a><a class="headerlink" href="#using-the-view-parser-class" title="Permalink to this headline"></a></h2>
 <p>The simplest method to load the parser class is through its service:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$parser</span> <span class="o">=</span> <span class="nx">\Config\Services</span><span class="o">::</span><span class="na">parser</span><span class="p">();</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$parser</span> <span class="o">=</span> <span class="nx">\Config\Services</span><span class="o">::</span><span class="na">parser</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Alternately, if you are not using the <code class="docutils literal notranslate"><span class="pre">Parser</span></code> class as your default renderer, you
 can instantiate it directly:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$parser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\CodeIgniter\View\Parser</span><span class="p">();</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$parser</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\CodeIgniter\View\Parser</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Then you can use any of the three standard rendering methods that it provides:
@@ -364,9 +359,7 @@ script. You will have to give each escaped value a unique parameter name.</p>
 <h3><a class="toc-backref" href="#id3">Parser templates</a><a class="headerlink" href="#parser-templates" title="Permalink to this headline"></a></h3>
 <p>You can use the <code class="docutils literal notranslate"><span class="pre">render()</span></code> method to parse (or render) simple templates,
 like this:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;blog_title&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;My Blog Title&#39;</span><span class="p">,</span>
     <span class="s1">&#39;blog_heading&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My Blog Heading&#39;</span><span class="p">,</span>
 <span class="p">];</span>
@@ -397,9 +390,7 @@ default is <strong>false</strong></li>
 <li><code class="docutils literal notranslate"><span class="pre">cascadeData</span></code> - true if pseudo-variable settings should be passed on to nested
 substitutions; default is <strong>true</strong></li>
 </ul>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">echo</span> <span class="nv">$parser</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;blog_template&#39;</span><span class="p">,</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$parser</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;blog_template&#39;</span><span class="p">,</span> <span class="p">[</span>
     <span class="s1">&#39;cache&#39;</span>      <span class="o">=&gt;</span> <span class="nx">HOUR</span><span class="p">,</span>
     <span class="s1">&#39;cache_name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;something_unique&#39;</span><span class="p">,</span>
 <span class="p">]);</span>
@@ -414,12 +405,11 @@ Substitutions are performed in the same sequence that pseudo-variables were adde
 <p>The <strong>simple substitution</strong> performed by the parser is a one-to-one
 replacement of pseudo-variables where the corresponding data parameter
 has either a scalar or string value, as in this example:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$template</span> <span class="o">=</span> <span class="s1">&#39;&lt;head&gt;&lt;title&gt;{blog_title}&lt;/title&gt;&lt;/head&gt;&#39;</span><span class="p">;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$template</span> <span class="o">=</span> <span class="s1">&#39;&lt;head&gt;&lt;title&gt;{blog_title}&lt;/title&gt;&lt;/head&gt;&#39;</span><span class="p">;</span>
 <span class="nv">$data</span>     <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;blog_title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My ramblings&#39;</span><span class="p">];</span>
 
 <span class="k">echo</span> <span class="nv">$parser</span><span class="o">-&gt;</span><span class="na">setData</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">renderString</span><span class="p">(</span><span class="nv">$template</span><span class="p">);</span>
+
 <span class="c1">// Result: &lt;head&gt;&lt;title&gt;My ramblings&lt;/title&gt;&lt;/head&gt;</span>
 </pre></div>
 </div>
@@ -463,9 +453,7 @@ the number of rows in the “blog_entries” element of the parameters array.</p
 <p>Parsing variable pairs is done using the identical code shown above to
 parse single variables, except, you will add a multi-dimensional array
 corresponding to your variable pair data. Consider this example:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;blog_title&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;My Blog Title&#39;</span><span class="p">,</span>
     <span class="s1">&#39;blog_heading&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My Blog Heading&#39;</span><span class="p">,</span>
     <span class="s1">&#39;blog_entries&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
@@ -487,9 +475,7 @@ with each of the nested “rows”.</p>
 <p>If your “pair” data is coming from a database result, which is already a
 multi-dimensional array, you can simply use the database <code class="docutils literal notranslate"><span class="pre">getResultArray()</span></code>
 method:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$query</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM blog&quot;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM blog&quot;</span><span class="p">);</span>
 
 <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;blog_title&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;My Blog Title&#39;</span><span class="p">,</span>
@@ -514,9 +500,7 @@ makes them available to the Parser.</p>
 <h3><a class="toc-backref" href="#id7">Nested Substitutions</a><a class="headerlink" href="#nested-substitutions" title="Permalink to this headline"></a></h3>
 <p>A nested substitution happens when the value for a pseudo-variable is
 an associative array of values, like a record from a database:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;blog_title&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;My Blog Title&#39;</span><span class="p">,</span>
     <span class="s1">&#39;blog_heading&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My Blog Heading&#39;</span><span class="p">,</span>
     <span class="s1">&#39;blog_entry&#39;</span>   <span class="o">=&gt;</span> <span class="p">[</span>
@@ -564,9 +548,7 @@ comments in a <code class="docutils literal notranslate"><span class="pre">{#</s
 <p>With both a nested and a loop substitution, you have the option of cascading
 data pairs into the inner substitution.</p>
 <p>The following example is not impacted by cascading:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$template</span> <span class="o">=</span> <span class="s1">&#39;{name} lives in {location}{city} on {planet}{/location}.&#39;</span><span class="p">;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$template</span> <span class="o">=</span> <span class="s1">&#39;{name} lives in {location}{city} on {planet}{/location}.&#39;</span><span class="p">;</span>
 
 <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;name&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;George&#39;</span><span class="p">,</span>
@@ -578,9 +560,7 @@ data pairs into the inner substitution.</p>
 </pre></div>
 </div>
 <p>This example gives different results, depending on cascading:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$template</span> <span class="o">=</span> <span class="s1">&#39;{location}{name} lives in {city} on {planet}{/location}.&#39;</span><span class="p">;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$template</span> <span class="o">=</span> <span class="s1">&#39;{location}{name} lives in {city} on {planet}{/location}.&#39;</span><span class="p">;</span>
 
 <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;name&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;George&#39;</span><span class="p">,</span>
@@ -823,21 +803,10 @@ lowercase, and each word capitalized.</td>
 <p>You can easily create your own filters by editing <strong>app/Config/View.php</strong> and adding new entries to the
 <code class="docutils literal notranslate"><span class="pre">$filters</span></code> array. Each key is the name of the filter is called by in the view, and its value is any valid PHP
 callable:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">namespace</span> <span class="nx">Config</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\Config\View</span> <span class="k">as</span> <span class="nx">BaseView</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">View</span> <span class="k">extends</span> <span class="nx">BaseView</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="nv">$filters</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">&#39;abs&#39;</span>        <span class="o">=&gt;</span> <span class="s1">&#39;\CodeIgniter\View\Filters::abs&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;capitalize&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;\CodeIgniter\View\Filters::capitalize&#39;</span><span class="p">,</span>
-    <span class="p">];</span>
-
-    <span class="c1">// ...</span>
-<span class="p">}</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;abs&#39;</span>        <span class="o">=&gt;</span> <span class="s1">&#39;\CodeIgniter\View\Filters::abs&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;capitalize&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;\CodeIgniter\View\Filters::capitalize&#39;</span><span class="p">,</span>
+<span class="p">];</span>
 </pre></div>
 </div>
 </div>
@@ -846,20 +815,9 @@ callable:</p>
 <p>You can use native php function as filters by editing <strong>app/Config/View.php</strong> and adding new entries to the
 <code class="docutils literal notranslate"><span class="pre">$filters</span></code> array.Each key is the name of the native PHP function is called by in the view, and its value is any valid native PHP
 function prefixed with:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">namespace</span> <span class="nx">Config</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\Config\View</span> <span class="k">as</span> <span class="nx">BaseView</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">View</span> <span class="k">extends</span> <span class="nx">BaseView</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="nv">$filters</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">&#39;str_repeat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;\str_repeat&#39;</span><span class="p">,</span>
-    <span class="p">];</span>
-
-    <span class="c1">// ...</span>
-<span class="p">}</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$filters</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;str_repeat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;\str_repeat&#39;</span><span class="p">,</span>
+<span class="p">];</span>
 </pre></div>
 </div>
 </div>
@@ -946,18 +904,6 @@ key/value pairs:</p>
 <td>Alias for the route_to helper function.</td>
 <td>{+ route “login” +}</td>
 </tr>
-<tr class="row-even"><td>csp_script_nonce</td>
-<td>&#160;</td>
-<td>Alias for the csp_script_nonce helper
-function.</td>
-<td>{+ csp_script_nonce +}</td>
-</tr>
-<tr class="row-odd"><td>csp_style_nonce</td>
-<td>&#160;</td>
-<td>Alias for the csp_style_nonce helper
-function.</td>
-<td>{+ csp_style_nonce +}</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -965,88 +911,48 @@ function.</td>
 <h4>Registering a Plugin<a class="headerlink" href="#registering-a-plugin" title="Permalink to this headline"></a></h4>
 <p>At its simplest, all you need to do to register a new plugin and make it ready for use is to add it to the
 <strong>app/Config/View.php</strong>, under the <strong>$plugins</strong> array. The key is the name of the plugin that is
-used within the template file. The value is any valid PHP callable, including static class methods:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">namespace</span> <span class="nx">Config</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\Config\View</span> <span class="k">as</span> <span class="nx">BaseView</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">View</span> <span class="k">extends</span> <span class="nx">BaseView</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="nv">$plugins</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">&#39;foo&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;\Some\Class::methodName&#39;</span><span class="p">,</span>
-    <span class="p">];</span>
-
-    <span class="c1">// ...</span>
-<span class="p">}</span>
+used within the template file. The value is any valid PHP callable, including static class methods, and closures:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$plugins</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;foo&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;\Some\Class::methodName&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;bar&#39;</span> <span class="o">=&gt;</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$str</span><span class="p">,</span> <span class="k">array</span> <span class="nv">$params</span><span class="o">=</span><span class="p">[])</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$str</span><span class="p">;</span>
+    <span class="p">},</span>
+<span class="p">];</span>
 </pre></div>
 </div>
-<p>You can also use closures, but these can only be defined in the config file’s constructor:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">namespace</span> <span class="nx">Config</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\Config\View</span> <span class="k">as</span> <span class="nx">BaseView</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">View</span> <span class="k">extends</span> <span class="nx">BaseView</span>
+<p>Any closures that are being used must be defined in the config file’s constructor:</p>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">View</span> <span class="k">extends</span> <span class="nx">\CodeIgniter\Config\View</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="nv">$plugins</span> <span class="o">=</span> <span class="p">[];</span>
 
     <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">plugins</span><span class="p">[</span><span class="s1">&#39;bar&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">static</span> <span class="k">function</span> <span class="p">(</span><span class="k">array</span> <span class="nv">$params</span> <span class="o">=</span> <span class="p">[])</span> <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">plugins</span><span class="p">[</span><span class="s1">&#39;bar&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">function</span> <span class="p">(</span><span class="k">array</span> <span class="nv">$params</span><span class="o">=</span><span class="p">[])</span> <span class="p">{</span>
             <span class="k">return</span> <span class="nv">$params</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">??</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
         <span class="p">};</span>
 
         <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
     <span class="p">}</span>
-
-    <span class="c1">// ...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>If the callable is on its own, it is treated as a single tag, not a open/close one. It will be replaced by
 the return value from the plugin:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$plugins</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;foo&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;\Some\Class::methodName&#39;</span>
+<span class="p">];</span>
 
-<span class="k">namespace</span> <span class="nx">Config</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\Config\View</span> <span class="k">as</span> <span class="nx">BaseView</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">View</span> <span class="k">extends</span> <span class="nx">BaseView</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="nv">$plugins</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">&#39;foo&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;\Some\Class::methodName&#39;</span><span class="p">,</span>
-    <span class="p">];</span>
-
-    <span class="c1">// ...</span>
-<span class="p">}</span>
-
-<span class="cm">/*</span>
-<span class="cm"> * Tag is replaced by the return value of Some\Class::methodName() static function.</span>
-<span class="cm"> * {+ foo +}</span>
-<span class="cm"> */</span>
+<span class="c1">// Tag is replaced by the return value of Some\Class::methodName static function.</span>
+<span class="p">{</span><span class="o">+</span> <span class="nx">foo</span> <span class="o">+</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>If the callable is wrapped in an array, it is treated as an open/close tag pair that can operate on any of
 the content between its tags:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$plugins</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;foo&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;\Some\Class::methodName&#39;</span><span class="p">]</span>
+<span class="p">];</span>
 
-<span class="k">namespace</span> <span class="nx">Config</span><span class="p">;</span>
-
-<span class="k">use</span> <span class="nx">CodeIgniter\Config\View</span> <span class="k">as</span> <span class="nx">BaseView</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">View</span> <span class="k">extends</span> <span class="nx">BaseView</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="nv">$plugins</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="s1">&#39;foo&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;\Some\Class::methodName&#39;</span><span class="p">],</span>
-    <span class="p">];</span>
-
-    <span class="c1">// ...</span>
-<span class="p">}</span>
-
-<span class="c1">// {+ foo +} inner content {+ /foo +}</span>
+<span class="p">{</span><span class="o">+</span> <span class="nx">foo</span> <span class="o">+</span><span class="p">}</span> <span class="nx">inner</span> <span class="nx">content</span> <span class="p">{</span><span class="o">+</span> <span class="o">/</span><span class="nx">foo</span> <span class="o">+</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -1056,9 +962,7 @@ the content between its tags:</p>
 <h2><a class="toc-backref" href="#id15">Usage Notes</a><a class="headerlink" href="#usage-notes" title="Permalink to this headline"></a></h2>
 <p>If you include substitution parameters that are not referenced in your
 template, they are ignored:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$template</span> <span class="o">=</span> <span class="s1">&#39;Hello, {firstname} {lastname}&#39;</span><span class="p">;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$template</span> <span class="o">=</span> <span class="s1">&#39;Hello, {firstname} {lastname}&#39;</span><span class="p">;</span>
 <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;title&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;Mr&#39;</span><span class="p">,</span>
     <span class="s1">&#39;firstname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span>
@@ -1066,14 +970,13 @@ template, they are ignored:</p>
 <span class="p">];</span>
 <span class="k">echo</span> <span class="nv">$parser</span><span class="o">-&gt;</span><span class="na">setData</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span>
             <span class="o">-&gt;</span><span class="na">renderString</span><span class="p">(</span><span class="nv">$template</span><span class="p">);</span>
+
 <span class="c1">// Result: Hello, John Doe</span>
 </pre></div>
 </div>
 <p>If you do not include a substitution parameter that is referenced in your
 template, the original pseudo-variable is shown in the result:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$template</span> <span class="o">=</span> <span class="s1">&#39;Hello, {firstname} {initials} {lastname}&#39;</span><span class="p">;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$template</span> <span class="o">=</span> <span class="s1">&#39;Hello, {firstname} {initials} {lastname}&#39;</span><span class="p">;</span>
 <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;title&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;Mr&#39;</span><span class="p">,</span>
     <span class="s1">&#39;firstname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span>
@@ -1081,15 +984,14 @@ template, the original pseudo-variable is shown in the result:</p>
 <span class="p">];</span>
 <span class="k">echo</span> <span class="nv">$parser</span><span class="o">-&gt;</span><span class="na">setData</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span>
             <span class="o">-&gt;</span><span class="na">renderString</span><span class="p">(</span><span class="nv">$template</span><span class="p">);</span>
+
 <span class="c1">// Result: Hello, John {initials} Doe</span>
 </pre></div>
 </div>
 <p>If you provide a string substitution parameter when an array is expected,
 i.e., for a variable pair, the substitution is done for the opening variable
 pair tag, but the closing variable pair tag is not rendered properly:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$template</span> <span class="o">=</span> <span class="s1">&#39;Hello, {firstname} {lastname} ({degrees}{degree} {/degrees})&#39;</span><span class="p">;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$template</span> <span class="o">=</span> <span class="s1">&#39;Hello, {firstname} {lastname} ({degrees}{degree} {/degrees})&#39;</span><span class="p">;</span>
 <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;degrees&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;Mr&#39;</span><span class="p">,</span>
     <span class="s1">&#39;firstname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span>
@@ -1101,6 +1003,7 @@ pair tag, but the closing variable pair tag is not rendered properly:</p>
 <span class="p">];</span>
 <span class="k">echo</span> <span class="nv">$parser</span><span class="o">-&gt;</span><span class="na">setData</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span>
             <span class="o">-&gt;</span><span class="na">renderString</span><span class="p">(</span><span class="nv">$template</span><span class="p">);</span>
+
 <span class="c1">// Result: Hello, John Doe (Mr{degree} {/degrees})</span>
 </pre></div>
 </div>
@@ -1134,16 +1037,14 @@ of in the view.</p>
 </div>
 <p>An example with the iteration controlled in the controller,
 using a view fragment:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$temp</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$temp</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
 <span class="nv">$template1</span> <span class="o">=</span> <span class="s1">&#39;&lt;li&gt;&lt;a href=&quot;{link}&quot;&gt;{title}&lt;/a&gt;&lt;/li&gt;&#39;</span><span class="p">;</span>
 <span class="nv">$data1</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">[</span><span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;First Link&#39;</span><span class="p">,</span> <span class="s1">&#39;link&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;/first&#39;</span><span class="p">],</span>
     <span class="p">[</span><span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Second Link&#39;</span><span class="p">,</span> <span class="s1">&#39;link&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;/second&#39;</span><span class="p">],</span>
 <span class="p">];</span>
 
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$data1</span> <span class="k">as</span> <span class="nv">$menuItem</span><span class="p">){</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$data1</span> <span class="k">as</span> <span class="nv">$menuItem</span><span class="p">),{</span>
     <span class="nv">$temp</span> <span class="o">.=</span> <span class="nv">$parser</span><span class="o">-&gt;</span><span class="na">setData</span><span class="p">(</span><span class="nv">$menuItem</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">renderString</span><span class="p">(</span><span class="nv">$template1</span><span class="p">);</span>
 <span class="p">}</span>
 
@@ -1192,9 +1093,7 @@ using a view fragment:</p>
 </tbody>
 </table>
 <p>Builds the output based upon a file name and any data that has already been set:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">echo</span> <span class="nv">$parser</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;myview&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$parser</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;myview&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Options supported:</p>
@@ -1235,9 +1134,7 @@ substitutions are performed for each data pair.</p>
 </tbody>
 </table>
 <p>Builds the output based upon a provided template source and any data that has already been set:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="k">echo</span> <span class="nv">$parser</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;myview&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$parser</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;myview&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Options supported, and behavior, as above.</p>
@@ -1265,9 +1162,7 @@ substitutions are performed for each data pair.</p>
 </tbody>
 </table>
 <p>Sets several pieces of view data at once:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$renderer</span><span class="o">-&gt;</span><span class="na">setData</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;George&#39;</span><span class="p">,</span> <span class="s1">&#39;position&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Boss&#39;</span><span class="p">]);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$renderer</span><span class="o">-&gt;</span><span class="na">setData</span><span class="p">([</span><span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;George&#39;</span><span class="p">,</span> <span class="s1">&#39;position&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Boss&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
 <p>Supported escape contexts: html, css, js, url, or attr or raw.
@@ -1297,9 +1192,7 @@ If ‘raw’, no escaping will happen.</p>
 </tbody>
 </table>
 <p>Sets a single piece of view data:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$renderer</span><span class="o">-&gt;</span><span class="na">setVar</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="s1">&#39;Joe&#39;</span><span class="p">,</span><span class="s1">&#39;html&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$renderer</span><span class="o">-&gt;</span><span class="na">setVar</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="s1">&#39;Joe&#39;</span><span class="p">,</span><span class="s1">&#39;html&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Supported escape contexts: html, css, js, url, attr or raw.
@@ -1328,9 +1221,7 @@ If ‘raw’, no escaping will happen.</p>
 </tbody>
 </table>
 <p>Override the substitution field delimiters:</p>
-<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-
-<span class="nv">$renderer</span><span class="o">-&gt;</span><span class="na">setDelimiters</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">,</span><span class="s1">&#39;]&#39;</span><span class="p">);</span>
+<div class="highlight-html+php notranslate"><div class="highlight"><pre><span></span><span class="nv">$renderer</span><span class="o">-&gt;</span><span class="na">setDelimiters</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">,</span><span class="s1">&#39;]&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1345,7 +1236,7 @@ If ‘raw’, no escaping will happen.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="view_layouts.html" class="btn btn-neutral float-left" title="View Layouts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="view_decorators.html" class="btn btn-neutral float-right" title="View Decorators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="table.html" class="btn btn-neutral float-right" title="HTML Table Class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
